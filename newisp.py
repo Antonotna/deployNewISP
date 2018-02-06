@@ -45,8 +45,8 @@ interface %s\n\
 route-map bgp-%s-in permit 10\n\
  set local-preference 40\n\
 route-map bgp-%s-out permit 10\n\
- set as-path prepend 65072 65072 65072 65072\n\
-			' % ((ispBGPName.lower(),)*2) )
+ set as-path prepend %s %s %s %s\n\
+			' % ((ispBGPName.lower(),)*2 + (regAS,)*4) )
 
 	#BGP
 	print('!\n\
